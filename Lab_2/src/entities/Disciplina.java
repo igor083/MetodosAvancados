@@ -38,25 +38,15 @@ public class Disciplina {
 		return this.professor;
 	}
 
-	public boolean alunoEstaNaDisciplina(Aluno aluno) {
-		for (Aluno alunoDaDisciplina : this.alunos) {
-			if (alunoDaDisciplina.getId() == aluno.getId()) {
-				return true;
-			}
-		}
+    public String[] getHorario() {
+        String horario[] = new String[] {this.horario.getDiaSemana(), this.horario.getHorasDia()};
+        return horario;
+    }
 
-		return false;
-	}
-
-	
 
 	// =-=-=-=-=-=-=-=-=| setters |=-=-=-=-=-=-=-=-=
 	public void addAluno(Aluno aluno) {
 		this.alunos.add(aluno);
+        aluno.addDisciplina(this);
 	}
-
-	public void addProfessor(Professor professor) {
-		this.professor = professor;
-	}
-
 }

@@ -11,27 +11,34 @@ public class App {
 	public static void main(String args[]) throws Exception {
 		ControleAcademico controleAcademico = new ControleAcademico();
 
-		Aluno aluno1 = controleAcademico.criarAluno("Saulo");
-		Aluno aluno2 = controleAcademico.criarAluno("Joao");
-		Aluno aluno3 = controleAcademico.criarAluno("Maria");
+		Aluno Saulo = controleAcademico.criarAluno("Saulo");
+		Aluno Joao = controleAcademico.criarAluno("Joao");
+		Aluno Maria = controleAcademico.criarAluno("Maria");
 
 		Professor Sabrina = controleAcademico.criarProfessor("Sabrina");
 		Professor Klaudio = controleAcademico.criarProfessor("Klaudio");
 
-		Disciplina POO = controleAcademico.criarDisciplina(
+		Disciplina MAP = controleAcademico.criarDisciplina(
 			"MAP", 
-            new Aluno[] {aluno1}, 
+            new Aluno[] {Saulo, Maria, Joao}, 
             Sabrina, 
             new Horario(MyTypes.DiaSemana.QUARTA, MyTypes.HorasDia.NOVE_AS_ONZE)
 		);
 
-        POO.addProfessor(Klaudio);
-        POO.addAluno(aluno2);
-        POO.addAluno(aluno3);
+		Disciplina PARADIGMAS = controleAcademico.criarDisciplina(
+			"PARADIGMAS", 
+            new Aluno[] {Maria, Joao}, 
+            Sabrina, 
+            new Horario(MyTypes.DiaSemana.QUINTA, MyTypes.HorasDia.VINTE_AS_VINTE_DOIS)
+		);
 
-		// Toda a responsabilidade de criar, adicionar e gerenciar os alunos ficam no ControleAcademico
-		// Toda a responsabilidade de criar, adicionar e gerenciar as disciplinas ficam no ControleAcademico
-		// Toda a responsabilidade de criar, adicionar e gerenciar os professores ficam no ControleAcademico
+        controleAcademico.printDisciplinasDoProfessor(Sabrina);
+        controleAcademico.printHorarioDoProfessor(Klaudio);
+        controleAcademico.printAlunosDaDisciplina(PARADIGMAS);
+        controleAcademico.printDisciplinasDoAluno(Maria);
+        controleAcademico.printHorarioDoAluno(Maria);
+        controleAcademico.printAlunosQtd(PARADIGMAS);
+        
 	}
 
 }

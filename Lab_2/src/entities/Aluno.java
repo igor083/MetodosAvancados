@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Aluno {
 	private String nome;
 	private int matricula;
-	private ArrayList<Disciplina> disciplinas;
+	private ArrayList<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 	public Aluno(String nome, int matricula) {
 		this.nome = nome;
