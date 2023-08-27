@@ -3,39 +3,32 @@ package entities;
 import java.util.ArrayList;
 
 public class ControleAcademico {
-	private ArrayList<Aluno> arrayAllAlunos;
-	private ArrayList<Disciplina> arrayAllDisciplinas;
-	private ArrayList<Professor> arrayAllProfessores;
+	private ArrayList<Aluno> todosAlunos;
+	private ArrayList<Disciplina> todasDisciplinas;
+	private ArrayList<Professor> todosProfessores;
+
 
 	public ControleAcademico() {
-		this.arrayAllAlunos = new ArrayList<>();
-		this.arrayAllDisciplinas = new ArrayList<>();
-		this.arrayAllProfessores = new ArrayList<>();
+		this.todosAlunos = new ArrayList<>();
+		this.todasDisciplinas = new ArrayList<>();
+		this.todosProfessores = new ArrayList<>();
 	}
 
-	// getters
-	public ArrayList<Aluno> getArrayAllAlunos() {
-		return this.arrayAllAlunos;
+	public Aluno criarAluno() {
+		Aluno novoAluno = new Aluno("Saulo", 211086573);
+		this.todosAlunos.add(novoAluno);
+		return novoAluno;
 	}
 
-	public ArrayList<Disciplina> getArrayAllDisciplinas() {
-		return this.arrayAllDisciplinas;
+	public Disciplina criarDisciplina() {
+		Disciplina novaDisciplina = new Disciplina("MAP");
+		this.todasDisciplinas.add(novaDisciplina);
+		return novaDisciplina;
 	}
 
-	public ArrayList<Professor> getArrayAllProfessores() {
-		return this.arrayAllProfessores;
-	}
-	// adicionando entidades
-
-	public void adicionarAluno(Aluno aluno) {
-		this.arrayAllAlunos.add(aluno);
-	}
-
-	public void adicionarProfessor(Professor p) {
-		this.arrayAllProfessores.add(p);
-	}
-
-	public void adicionaDisciplina(Disciplina d) {
-		this.arrayAllDisciplinas.add(d);
+	public Professor criarProfessor() {
+		Professor novoProfessor = new Professor("Sabrina");
+		this.todosProfessores.add(novoProfessor);
+		return novoProfessor;
 	}
 }
