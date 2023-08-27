@@ -2,34 +2,36 @@ package entities;
 
 import java.util.ArrayList;
 
+import helpers.Horario;
+import helpers.MyTypes;
+
 public class Disciplina {
 	private String nome;
-	private ArrayList<Aluno> arrayAlunos;
-	// horario
-	// dias
+	private int id;
+	private ArrayList<Aluno> alunos;
+	private Professor professor;
+	private Horario	horario;
 
-	// constructor
-	public Disciplina(String nome) {
+	public Disciplina(String nome, int id, ArrayList<Aluno> alunos, Professor professor) {
 		this.nome = nome;
-		arrayAlunos = new ArrayList<Aluno>();
+		this.id = id;
+		this.alunos = alunos;
+		this.professor = professor;
+		this.horario = this.escolherHorarioAleatorio();
 	}
 
-	// get
-	public String getNome() {
-		return nome;
+	public Disciplina(String nome, int id, ArrayList<Aluno> alunos, Professor professor, Horario horario) {
+		this.nome = nome;
+		this.id = id;
+		this.alunos = alunos;
+		this.professor = professor;
+		this.horario = horario;
 	}
 
-	public ArrayList<Aluno> getArrayAlunos() {
-		return arrayAlunos;
-	}
+	public Horario escolherHorarioAleatorio() {
+		// Escolher melhor horario
+		Horario novoHorario = new Horario(MyTypes.DiaSemana.SEGUNDA, MyTypes.HorasDia.ONZE_AS_TREZE);
 
-	// metodos
-	public String tamanhoTurma() {
-		return "A quantidade de alunos na turma e de: " + arrayAlunos.size();
-
-	}
-
-	public void addAlunoNaDisciplina(Aluno aluno) {
-		arrayAlunos.add(aluno);
+		return novoHorario;
 	}
 }

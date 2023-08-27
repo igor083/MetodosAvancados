@@ -5,13 +5,11 @@ import entities.Disciplina;
 public class App {
 	public static void main(String args[]) throws Exception {
 		ControleAcademico controleAcademico = new ControleAcademico();
-		Aluno aluno = new Aluno("joao", 202080129);
-		Disciplina disciplina = new Disciplina("matematica");
-		
-		controleAcademico.adicionarAluno(aluno);
-		controleAcademico.adicionaDisciplina(disciplina);
-		
-		System.out.println(disciplina.tamanhoTurma());
+
+
+		// Toda a responsabilidade de criar, adicionar e gerenciar os alunos ficam no ControleAcademico
+		// Toda a responsabilidade de criar, adicionar e gerenciar as disciplinas ficam no ControleAcademico
+		// Toda a responsabilidade de criar, adicionar e gerenciar os professores ficam no ControleAcademico
 	}
 
 }

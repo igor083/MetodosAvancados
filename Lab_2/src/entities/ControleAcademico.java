@@ -9,6 +9,7 @@ public class ControleAcademico {
 	private ArrayList<Professor> todosProfessores;
 
 	private Uuid alunosIds = new Uuid();
+	private Uuid disciplinasIds = new Uuid();
 
 
 	public ControleAcademico() {
@@ -23,9 +24,22 @@ public class ControleAcademico {
 		return novoAluno;
 	}
 
-	public Disciplina criarDisciplina() {
-		Disciplina novaDisciplina = new Disciplina("MAP");
+	public Disciplina criarDisciplina(String nome, ArrayList<Aluno> alunos, Professor professor) {
+		ArrayList<Aluno> novosAlunos = new ArrayList<Aluno>();
+
+		for (int c = 0; c < 10; c++) {
+			novosAlunos.add(new Aluno("Joao", this.alunosIds.createUuid()));
+		}
+
+		Disciplina novaDisciplina = new Disciplina(
+			nome, 
+			this.disciplinasIds.createUuid(),
+			novosAlunos,
+			new Professor("Sabrina")
+		);
+
 		this.todasDisciplinas.add(novaDisciplina);
+		
 		return novaDisciplina;
 	}
 
