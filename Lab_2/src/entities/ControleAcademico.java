@@ -8,34 +8,34 @@ public class ControleAcademico {
 	private ArrayList<Professor> arrayAllProfessores;
 
 	public ControleAcademico() {
-		arrayAllAlunos = new ArrayList<>();
-		arrayAllDisciplinas = new ArrayList<>();
-		arrayAllProfessores = new ArrayList<>();
+		this.arrayAllAlunos = new ArrayList<>();
+		this.arrayAllDisciplinas = new ArrayList<>();
+		this.arrayAllProfessores = new ArrayList<>();
 	}
 
 	// getters
 	public ArrayList<Aluno> getArrayAllAlunos() {
-		return arrayAllAlunos;
+		return this.arrayAllAlunos;
 	}
 
 	public ArrayList<Disciplina> getArrayAllDisciplinas() {
-		return arrayAllDisciplinas;
+		return this.arrayAllDisciplinas;
 	}
 
 	public ArrayList<Professor> getArrayAllProfessores() {
-		return arrayAllProfessores;
+		return this.arrayAllProfessores;
 	}
 	// adicionando entidades
 
 	public void adicionarAluno(Aluno aluno) {
-		arrayAllAlunos.add(aluno);
+		this.arrayAllAlunos.add(aluno);
 	}
 
 	public void adicionarProfessor(Professor p) {
-		arrayAllProfessores.add(p);
+		this.arrayAllProfessores.add(p);
 	}
 
 	public void adicionaDisciplina(Disciplina d) {
-		arrayAllDisciplinas.add(d);
+		this.arrayAllDisciplinas.add(d);
 	}
 }
