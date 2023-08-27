@@ -3,7 +3,6 @@ package entities;
 import java.util.ArrayList;
 
 import helpers.Horario;
-import helpers.MyTypes;
 import helpers.Uuid;
 
 public class ControleAcademico {
