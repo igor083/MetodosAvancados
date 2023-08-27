@@ -8,30 +8,55 @@ import helpers.MyTypes;
 public class Disciplina {
 	private String nome;
 	private int id;
-	private ArrayList<Aluno> alunos;
+	private ArrayList<Aluno> alunos = new ArrayList<Aluno>();
 	private Professor professor;
 	private Horario	horario;
 
-	public Disciplina(String nome, int id, ArrayList<Aluno> alunos, Professor professor) {
+	public Disciplina(String nome, int id, Aluno[] alunos, Professor professor, Horario horario) {
 		this.nome = nome;
 		this.id = id;
-		this.alunos = alunos;
-		this.professor = professor;
-		this.horario = this.escolherHorarioAleatorio();
-	}
-
-	public Disciplina(String nome, int id, ArrayList<Aluno> alunos, Professor professor, Horario horario) {
-		this.nome = nome;
-		this.id = id;
-		this.alunos = alunos;
 		this.professor = professor;
 		this.horario = horario;
+
+        for (Aluno aluno : alunos) {
+            this.alunos.add(aluno);
+            aluno.addDisciplina(this);
+        }
+	}
+    
+
+	// =-=-=-=-=-=-=-=-=| Getters |=-=-=-=-=-=-=-=-=
+	public ArrayList<Aluno> getAlunos() {
+		return this.alunos;
 	}
 
-	public Horario escolherHorarioAleatorio() {
-		// Escolher melhor horario
-		Horario novoHorario = new Horario(MyTypes.DiaSemana.SEGUNDA, MyTypes.HorasDia.ONZE_AS_TREZE);
+	public String getNome() {
+		return this.nome;
+	}	
 
-		return novoHorario;
+	public Professor getProfessor() {
+		return this.professor;
 	}
+
+	public boolean alunoEstaNaDisciplina(Aluno aluno) {
+		for (Aluno alunoDaDisciplina : this.alunos) {
+			if (alunoDaDisciplina.getId() == aluno.getId()) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	
+
+	// =-=-=-=-=-=-=-=-=| setters |=-=-=-=-=-=-=-=-=
+	public void addAluno(Aluno aluno) {
+		this.alunos.add(aluno);
+	}
+
+	public void addProfessor(Professor professor) {
+		this.professor = professor;
+	}
+
 }
