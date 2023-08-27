@@ -1,11 +1,14 @@
 package entities;
 
 import java.util.ArrayList;
+import helpers.Uuid;
 
 public class ControleAcademico {
 	private ArrayList<Aluno> todosAlunos;
 	private ArrayList<Disciplina> todasDisciplinas;
 	private ArrayList<Professor> todosProfessores;
+
+	private Uuid alunosIds = new Uuid();
 
 
 	public ControleAcademico() {
@@ -14,8 +17,8 @@ public class ControleAcademico {
 		this.todosProfessores = new ArrayList<>();
 	}
 
-	public Aluno criarAluno() {
-		Aluno novoAluno = new Aluno("Saulo", 211086573);
+	public Aluno criarAluno(String nome) {
+		Aluno novoAluno = new Aluno(nome, this.alunosIds.createUuid());
 		this.todosAlunos.add(novoAluno);
 		return novoAluno;
 	}
