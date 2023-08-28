@@ -32,5 +32,6 @@ public class Aluno {
 	// =-=-=-=-=-=-=-=-=| setters |=-=-=-=-=-=-=-=-=
 	public void addDisciplina(Disciplina disciplina) {
 		this.disciplinas.add(disciplina);
+      disciplina.addAluno(this);
 	}
 }

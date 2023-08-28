@@ -16,24 +16,28 @@ public class App {
 		Aluno Saulo = controleAcademico.criarAluno("Saulo");
 		Aluno Joao = controleAcademico.criarAluno("Joao");
 		Aluno Maria = controleAcademico.criarAluno("Maria");
-
 		Professor Sabrina = controleAcademico.criarProfessor("Sabrina");
 		Professor Klaudio = controleAcademico.criarProfessor("Klaudio");
-
+      
 		Disciplina MAP = controleAcademico.criarDisciplina(
-			"MAP", 
-            new Aluno[] {Saulo, Maria, Joao}, 
-            Sabrina, 
-            new Horario(MyTypes.DiaSemana.QUARTA, MyTypes.HorasDia.NOVE_AS_ONZE)
-		);
+         "MAP", 
+         
+         Sabrina, 
+         new Horario(MyTypes.DiaSemana.QUARTA, MyTypes.HorasDia.NOVE_AS_ONZE)
+         );
+         
+         
 
 		Disciplina PARADIGMAS = controleAcademico.criarDisciplina(
 			"PARADIGMAS", 
-            new Aluno[] {Maria, Joao}, 
-            Sabrina, 
+            
+            Klaudio, 
             new Horario(MyTypes.DiaSemana.QUINTA, MyTypes.HorasDia.VINTE_AS_VINTE_DOIS)
 		);
-
+      Saulo.addDisciplina(MAP);
+         Maria.addDisciplina(MAP);
+         Maria.addDisciplina(PARADIGMAS); 
+         Saulo.addDisciplina(PARADIGMAS); 
         controleAcademico.printDisciplinasDoProfessor(Sabrina);
         controleAcademico.printHorarioDoProfessor(Klaudio);
         controleAcademico.printAlunosDaDisciplina(PARADIGMAS);

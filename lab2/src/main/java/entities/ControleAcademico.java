@@ -14,6 +14,7 @@ public class ControleAcademico {
 	private Uuid disciplinasIds = new Uuid();
 	private Uuid professoresIds = new Uuid();
 
+   
 
 	public ControleAcademico() {
 		this.todosAlunos = new ArrayList<Aluno>();
@@ -23,11 +24,10 @@ public class ControleAcademico {
 
 
 	// =-=-=-=-=-=-=-=-=| Creators |=-=-=-=-=-=-=-=-=
-	public Disciplina criarDisciplina(String nome, Aluno[] alunos, Professor professor, Horario horario) {
+	public Disciplina criarDisciplina(String nome, Professor professor, Horario horario) {
 		Disciplina novaDisciplina = new Disciplina(
 			nome, 
 			this.disciplinasIds.createUuid(), 
-			alunos, 
 			professor, 
 			horario
 		);

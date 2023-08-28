@@ -12,7 +12,7 @@ public class Disciplina {
 	private Professor professor;
 	private Horario	horario;
 
-	public Disciplina(String nome, int id, Aluno[] alunos, Professor professor, Horario horario) {
+	public Disciplina(String nome, int id, Professor professor, Horario horario) {
 		this.nome = nome;
 		this.id = id;
 		this.professor = professor;
@@ -47,6 +47,6 @@ public class Disciplina {
 	// =-=-=-=-=-=-=-=-=| setters |=-=-=-=-=-=-=-=-=
 	public void addAluno(Aluno aluno) {
 		this.alunos.add(aluno);
-        aluno.addDisciplina(this);
+     
 	}
 }
