@@ -10,12 +10,14 @@ import entities.Professor;
 public class AlunoTest {
    @Test
    void testeAddDisciplina(){//testando metodo de adicionar disciplinas ao array de disciplinas do aluno
-      Aluno a = new Aluno("null", 0);
+      Aluno a = new Aluno("Mario", 0);
+
       a.addDisciplina(
          new Disciplina(null,
             0,
-            new Professor("null", 0),
+            new Professor("Sabrina", 0),
          null));
+
          assertEquals(a.getDisciplinas().size(),1);
    }
 }

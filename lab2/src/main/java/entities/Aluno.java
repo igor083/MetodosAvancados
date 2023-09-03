@@ -1,37 +1,24 @@
 package entities;
 
-import java.util.ArrayList;
+import helpers.Uuid;
 
 public class Aluno {
-	private String nome;
-	private int matricula;
-	private ArrayList<Disciplina> disciplinas = new ArrayList<Disciplina>();
+    private int matricula = Uuid.gerarIdAleatorio();
+    private String nome = "";
 
-	public Aluno(String nome, int matricula) {
-		this.nome = nome;
-		this.matricula = matricula;
-	}
+    Aluno(String nome) {
+        this.nome = nome;
+    }
 
-	// =-=-=-=-=-=-=-=-=| Getters |=-=-=-=-=-=-=-=-=
-	public String getNome() {
-		return nome;
-	}
+    public int getMatricula() {
+      return matricula;
+    }
 
-	public int getMatricula() {
-		return this.matricula;
-	}
+    public String getNome() {
+      return nome;
+    }
 
-	public int getId() {
-		return this.matricula;
-	}	
-
-	public ArrayList<Disciplina> getDisciplinas() {
-		return this.disciplinas;
-	}
-
-	// =-=-=-=-=-=-=-=-=| setters |=-=-=-=-=-=-=-=-=
-	public void addDisciplina(Disciplina disciplina) {
-		this.disciplinas.add(disciplina);
-      disciplina.addAluno(this);
-	}
+    public void setNome(String nome) {
+      this.nome = nome;
+    }
 }

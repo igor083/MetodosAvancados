@@ -1,52 +1,24 @@
 package entities;
 
-import java.util.ArrayList;
-
-import helpers.Horario;
-import helpers.MyTypes;
+import helpers.Uuid;
 
 public class Disciplina {
-	private String nome;
-	private int id;
-	private ArrayList<Aluno> alunos = new ArrayList<Aluno>();
-	private Professor professor;
-	private Horario	horario;
+    private int id = Uuid.gerarIdAleatorio();
+    private String nome = "";
 
-	public Disciplina(String nome, int id, Professor professor, Horario horario) {
-		this.nome = nome;
-		this.id = id;
-		this.professor = professor;
-		this.horario = horario;
-
-        for (Aluno aluno : alunos) {
-            this.alunos.add(aluno);
-            aluno.addDisciplina(this);
-        }
-	}
-    
-
-	// =-=-=-=-=-=-=-=-=| Getters |=-=-=-=-=-=-=-=-=
-	public ArrayList<Aluno> getAlunos() {
-		return this.alunos;
-	}
-
-	public String getNome() {
-		return this.nome;
-	}	
-
-	public Professor getProfessor() {
-		return this.professor;
-	}
-
-    public String[] getHorario() {
-        String horario[] = new String[] {this.horario.getDiaSemana(), this.horario.getHorasDia()};
-        return horario;
+    public Disciplina(String nome) {
+        this.nome = nome;
     }
 
+    public int getId() {
+      return id;
+    }
 
-	// =-=-=-=-=-=-=-=-=| setters |=-=-=-=-=-=-=-=-=
-	public void addAluno(Aluno aluno) {
-		this.alunos.add(aluno);
-     
-	}
+    public String getNome() {
+      return nome;
+    }
+
+    public void setNome(String nome) {
+      this.nome = nome;
+    }
 }

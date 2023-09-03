@@ -1,11 +1,11 @@
 package helpers;
 
+import java.util.Random;
+
 public class Uuid {
-    private int count = 1111111;
+    private static Random random = new Random();
 
-    public int createUuid() {
-        this.count += 1;
-
-        return count;
+    public static int gerarIdAleatorio() {
+        return random.nextInt(Integer.MAX_VALUE);
     }
 }
