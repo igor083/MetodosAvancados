@@ -10,11 +10,11 @@ public class Horario {
     }
 
     public String getDiaSemana() {
-      return diaSemana.toString();
+      	return diaSemana.toString();
     }
 
     public String getHorasDia() {
-      return horasDia.toString();
+      	return horasDia.toString();
     }
 }
 

@@ -6,19 +6,19 @@ public class Aluno {
     private int matricula = Uuid.gerarIdAleatorio();
     private String nome = "";
 
-    Aluno(String nome) {
+    public Aluno(String nome) {
         this.nome = nome;
     }
 
     public int getMatricula() {
-      return matricula;
+      	return matricula;
     }
 
     public String getNome() {
-      return nome;
+      	return nome;
     }
 
     public void setNome(String nome) {
-      this.nome = nome;
+      	this.nome = nome;
     }
 }

@@ -11,14 +11,14 @@ public class Disciplina {
     }
 
     public int getId() {
-      return id;
+      	return id;
     }
 
     public String getNome() {
-      return nome;
+      	return nome;
     }
 
     public void setNome(String nome) {
-      this.nome = nome;
+      	this.nome = nome;
     }
 }
