@@ -1,23 +1,42 @@
 package lab2;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.Test;
 
 import entities.Aluno;
-import entities.ControleAcademico;
-import entities.Disciplina;
-import entities.Professor;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
 public class AlunoTest {
-   @Test
-   void testeAddDisciplina(){//testando metodo de adicionar disciplinas ao array de disciplinas do aluno
-      Aluno a = new Aluno("Mario", 0);
+    private Aluno aluno;
 
-      a.addDisciplina(
-         new Disciplina(null,
-            0,
-            new Professor("Sabrina", 0),
-         null));
+    @BeforeEach
+    void setUp() {
+        aluno = new Aluno("João");
+    }
 
-         assertEquals(a.getDisciplinas().size(),1);
-   }
+    @Test
+    public void testConstrutorAluno() {
+        assertEquals("João", aluno.getNome());
+        assertEquals(aluno.getMatricula(), aluno.getId());
+    }
+
+    @Test
+    public void testGetNome() {
+        assertEquals("João", aluno.getNome());
+    }
+
+    @Test
+    public void testGetMatricula() {
+        assertTrue(aluno.getMatricula() > 0);
+    }
+
+    @Test
+    public void testGetId() {
+        assertEquals(aluno.getMatricula(), aluno.getId());
+    }
+
+    @Test
+    public void testSetNome() {
+        aluno.setNome("Maria");
+        assertEquals("Maria", aluno.getNome());
+    }
 }

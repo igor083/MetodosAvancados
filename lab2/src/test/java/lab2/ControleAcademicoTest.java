@@ -1,44 +1,82 @@
 package lab2;
 
-import org.junit.jupiter.api.Test;
-
-import entities.ControleAcademico;
-import entities.Disciplina;
-import entities.Professor;
+import entities.*;
+import exception.RdmException;
 import helpers.Horario;
+import helpers.MyTypes;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-class ControleAcademicoTest {
-	ControleAcademico CA = new ControleAcademico();
+public class ControleAcademicoTest {
+    private static ControleAcademico controleAcademico;
 
-	@Test
-	void testArraysIniciais() {
-		ControleAcademico CA = new ControleAcademico();
-		int soma = CA.getTodosAlunos().size() + CA.getTodasDisciplinas().size() + CA.getTodosProfessores().size();
-		assertEquals(soma, 0);
-	}
+    @BeforeEach
+    void setUp() {
+        controleAcademico = new ControleAcademico("Academic Control");
+    }
 
-	@Test
-	void testeCriarDisciplina() {// testa a adicao da cisciplina no array do controle academico
-		CA.criarAluno("Igor");
-		CA.criarDisciplina(null, new Professor(
-				"null",
-				0), null);
-		assertEquals(CA.getTodasDisciplinas().size(), 1);
-	}
+    @Test
+    public void testCriarProfessor() throws RdmException {
+        Professor professor = controleAcademico.criarProfessor("Alice Johnson");
+        assertEquals("Alice Johnson", professor.getNome());
+    }
 
-	@Test
-	void testeCriarAluno() {// testa a adicao do aluno no array do controle academico
-		CA.criarAluno("null");
-		assertEquals(CA.getTodosAlunos().size(), 1);
-	}
+    @Test
+    public void testRemoverProfessor() throws RdmException{
+        Professor professor = controleAcademico.criarProfessor("Carol Davis");
+        int result = controleAcademico.removerProfessor(professor);
 
-	@Test
-	void testeCriarProfessor() {
-		CA.criarProfessor("null");
-		assertEquals(CA.getTodosProfessores().size(), 1);
+        assertEquals(1, result);
+    }
 
-	}
+    @Test
+    public void testRemoverProfessorInexistente() throws RdmException{
+        Professor professor = new Professor("John Doe");
 
+        assertThrows(RdmException.class, () -> {
+            controleAcademico.removerProfessor(professor);
+        });
+    }
+
+    @Test
+    public void testCriarTurmaComHorarioConflitante() throws RdmException {
+        Professor professor = controleAcademico.criarProfessor("Alice Johnson");
+        Disciplina disciplina = controleAcademico.criarDisciplina("Math");
+        Aluno[] alunos = {
+            controleAcademico.criarAluno("David"),
+            controleAcademico.criarAluno("Eve")
+        };
+
+        // Crie objetos Horario para representar os horários das turmas
+        Horario horarioTurma1 = new Horario(MyTypes.DiaSemana.SEGUNDA, MyTypes.HorasDia.NOVE_AS_ONZE);
+        Horario horarioTurma2 = new Horario(MyTypes.DiaSemana.SEGUNDA, MyTypes.HorasDia.ONZE_AS_TREZE);
+
+        assertThrows(RdmException.class, () -> {
+            controleAcademico.criarTurma(professor, disciplina, alunos, horarioTurma1);
+            controleAcademico.criarTurma(professor, disciplina, alunos, horarioTurma2);
+        });
+    }
+
+    @Test
+    public void testCriarTurmaComProfessorDisciplinaAlunosRepetidos() throws RdmException {
+        Professor professor = controleAcademico.criarProfessor("Alice Johnson");
+        Disciplina disciplina = controleAcademico.criarDisciplina("Math");
+        Aluno[] alunos = {
+            controleAcademico.criarAluno("David"),
+            controleAcademico.criarAluno("Eve")
+        };
+
+        // Crie um objeto Horario para representar o horário da turma
+        Horario horarioTurma = new Horario(MyTypes.DiaSemana.SEGUNDA, MyTypes.HorasDia.NOVE_AS_ONZE);
+
+        assertThrows(RdmException.class, () -> {
+            controleAcademico.criarTurma(professor, disciplina, alunos, horarioTurma);
+            controleAcademico.criarTurma(professor, disciplina, alunos, horarioTurma);
+        });
+    }
 }
+
+
+

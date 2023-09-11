@@ -1,26 +1,31 @@
 package lab2;
 
-import org.junit.jupiter.api.Test;
-
 import entities.Disciplina;
-import entities.Professor;
-import entities.Aluno;
-import helpers.Horario;
-import helpers.MyTypes;  
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DisciplinaTest {
+    private Disciplina disciplina;
+
+    @BeforeEach
+    void setUp() {
+        disciplina = new Disciplina("Matemática");
+    }
 
     @Test
-    public void testAddAluno() {
-        Professor professor = new Professor("Professor",1);
-        Horario horario = new Horario(MyTypes.DiaSemana.SEGUNDA, MyTypes.HorasDia.SETE_AS_NOVE);
-        Disciplina disciplina = new Disciplina("Disciplina", 1, professor, horario);
-        
-        Aluno aluno1 = new Aluno("João", 123);
+    public void testConstrutorDisciplina() {
+        assertEquals("Matemática", disciplina.getNome());
+    }
 
-        disciplina.addAluno(aluno1);
-        assertTrue(disciplina.getAlunos().contains(aluno1));
+    @Test
+    public void testGetNome() {
+        assertEquals("Matemática", disciplina.getNome());
+    }
+
+    @Test
+    public void testSetNome() {
+        disciplina.setNome("Física");
+        assertEquals("Física", disciplina.getNome());
     }
 }

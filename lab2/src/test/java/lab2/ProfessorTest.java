@@ -1,19 +1,37 @@
 package lab2;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.Test;
-
-import entities.Disciplina;
 import entities.Professor;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ProfessorTest {
-   @Test
-   public void testeAddDisciplina() {
-      Professor professor = new Professor("Professor", 1); 
-      professor.addDisciplina(new Disciplina("Disciplina", 1, professor, null )); 
-      
-      assertEquals(1, professor.getDisciplinas().size());
-   }
-}
+    private Professor professor;
 
+    @BeforeEach
+    void setUp() {
+        professor = new Professor("Alice");
+    }
+
+    @Test
+    public void testConstrutorProfessor() {
+        assertEquals("Alice", professor.getNome());
+        assertTrue(professor.getId() > 0);
+    }
+
+    @Test
+    public void testGetNome() {
+        assertEquals("Alice", professor.getNome());
+    }
+
+    @Test
+    public void testGetId() {
+        assertTrue(professor.getId() > 0);
+    }
+
+    @Test
+    public void testSetNome() {
+        professor.setNome("Bob");
+        assertEquals("Bob", professor.getNome());
+    }
+}
