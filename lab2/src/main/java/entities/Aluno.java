@@ -11,11 +11,15 @@ public class Aluno {
     }
 
     public int getMatricula() {
-      	return matricula;
+      	return this.matricula;
+    }
+
+    public int getId() {
+        return this.matricula;
     }
 
     public String getNome() {
-      	return nome;
+      	return this.nome;
     }
 
     public void setNome(String nome) {

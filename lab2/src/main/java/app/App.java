@@ -17,11 +17,10 @@ public class App {
         Professor Sabrina = RDM.criarProfessor("Sabrina");
         Professor Klaudio = RDM.criarProfessor("Klaudio");
 
-        Disciplina disciplina = new Disciplina("Paradigmas");
-        Disciplina disciplina2 = new Disciplina("Paradigmas");
+        Disciplina disciplina = RDM.criarDisciplina("Paradigmas");
 
-        Aluno aluno1 = new Aluno("João");
-        Aluno aluno2 = new Aluno("Maria");
+        Aluno aluno1 = RDM.criarAluno("Joao");
+        Aluno aluno2 = RDM.criarAluno("Maria");
 
         RDM.criarTurma(
             Sabrina,
@@ -33,20 +32,15 @@ public class App {
         RDM.criarTurma(
             Sabrina,
             "Paradigmas",
-            new Aluno[0],
+            new Aluno[]{aluno2},
             new Horario(MyTypes.DiaSemana.TERÇA, MyTypes.HorasDia.ONZE_AS_TREZE)
         );
-
-        // RDM.criarTurma(
-        //     Sabrina,
-        //     disciplina,
-        //     null,
-        //     new Horario(MyTypes.DiaSemana.SEGUNDA, MyTypes.HorasDia.ONZE_AS_TREZE)
-        // );
 
         RDM.printTurmasDoProfessor(Sabrina);
         RDM.printHorarioDoProfessor(Sabrina);
         RDM.printAlunosDaDisciplina(disciplina);
-
+        RDM.printDisciplinasDoAluno(aluno2);
+        RDM.printHorarioDoAluno(aluno2);
+        RDM.printQtdAlunosDaDisciplina(disciplina);
     }
 }

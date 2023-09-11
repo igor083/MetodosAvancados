@@ -88,6 +88,13 @@ public class ControleAcademico {
         return novaDisciplina;
     }
 
+    public Aluno criarAluno(String nome) {
+        Aluno novoAluno = new Aluno(nome);
+        this.alunos.add(novoAluno);
+
+        return novoAluno;
+    }
+
     public void printAlunosDaDisciplina(String disciplinaNome) {
         for (Turma turma : this.turmas) {
             if (turma.getDisciplina().getNome().equals(disciplinaNome)) {
@@ -127,7 +134,41 @@ public class ControleAcademico {
         }
     }
 
+    public void printDisciplinasDoAluno(Aluno aluno) {
+        System.out.println("\nDisciplinas do aluno " + aluno.getNome() + ":");
 
-    // quais as disciplinas de um aluno
+        for (Turma turma : this.turmas) {
+            for (Aluno alunoDaTurma : turma.getTodosAlunos()) {
+                if (alunoDaTurma != null && alunoDaTurma.getId() == aluno.getId()) {
+                    System.out.println("-> " + turma.getDisciplina().getNome());
+                }
+            }
+        }
+    }
+
+    public void printHorarioDoAluno(Aluno aluno) {
+        System.out.println("\nHorario do aluno " + aluno.getNome() + ":");
+
+        for (Turma turma : this.turmas) {
+            for (Aluno alunoDaTurma : turma.getTodosAlunos()) {
+                if (alunoDaTurma != null && alunoDaTurma.getId() == aluno.getId()) {
+                    System.out.println("-> " + turma.getHorario().getDiaSemana() + " às " + turma.getHorario().getHorasDia());
+                }
+            }
+        }
+    }    
+
+    // Considera todas as turmas de uma determianda disciplina
+    public void printQtdAlunosDaDisciplina(Disciplina disciplina) {
+        int qtdAlunos = 0;
+
+        for (Turma turma : this.turmas) {
+            if (turma.getDisciplina().getId() == disciplina.getId()) {
+                qtdAlunos += turma.getTodosAlunos().length;
+            }
+        }
+
+        System.out.println("\nQuantidade de alunos da disciplina " + disciplina.getNome() + ": " + qtdAlunos);
+    }
 
 }
