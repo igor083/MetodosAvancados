@@ -3,22 +3,22 @@ package entities;
 import helpers.Uuid;
 
 public class Professor {
-	private int id = Uuid.gerarIdAleatorio();
-	private String nome = "";
+   private int id = Uuid.gerarIdAleatorio();
+   private String nome = "";
 
-	public Professor(String nome) {
-		this.nome = nome;
-	}
+   public Professor(String nome) {
+      this.nome = nome;
+   }
 
-	public int getId() {
-		return id;
-	}
+   public int getId() {
+      return id;
+   }
 
-	public String getNome() {
-		return nome;
-	}
+   public String getNome() {
+      return nome;
+   }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+   public void setNome(String nome) {
+      this.nome = nome;
+   }
 }
