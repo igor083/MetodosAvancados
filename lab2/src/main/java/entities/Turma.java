@@ -4,7 +4,6 @@ import helpers.Horario;
 import helpers.Uuid;
 import helpers.MyTypes.DiaSemana;
 import helpers.MyTypes.HorasDia;
-import helpers.Horario;
 
 public class Turma {
     private int id = Uuid.gerarIdAleatorio();
