@@ -82,6 +82,13 @@ public class FigurasGeometricas {
 		return area;
 	}
 
+	public void getTodasAreas() {
+		System.out.println("=-=-=-=| Todas as áreas |=-=-=-=-=");
+		System.out.println("Retangulo: " + this.retangulo.getArea());
+		System.out.println("Quadrado: " + this.quadrado.getArea());
+		System.out.println("Circulo: " + this.circulo.getArea());
+	}
+
 
 
 	// =-=-=-=-=-=-=-=-=| Get Perimetro |=-=-=-=-=-=-=-=-=
@@ -101,5 +108,12 @@ public class FigurasGeometricas {
 		double perimetro = this.circulo.getPerimetro();
 		System.out.println("O perímetro do círculo é: " + perimetro);
 		return perimetro;
+	}
+
+	public void getTodosPerimetros() {
+		System.out.println("=-=-=-=| Todos os perímetros |=-=-=-=-=");
+		System.out.println("Retangulo: " + this.retangulo.getPerimetro());
+		System.out.println("Quadrado: " + this.quadrado.getPerimetro());
+		System.out.println("Circulo: " + this.circulo.getPerimetro());
 	}
 }

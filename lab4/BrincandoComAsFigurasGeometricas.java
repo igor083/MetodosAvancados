@@ -18,6 +18,9 @@ public class BrincandoComAsFigurasGeometricas {
 
 		figurasGeometricas.getAreaRetangulo();
 		figurasGeometricas.getPerimetroRetangulo();
+
+		figurasGeometricas.getTodasAreas();
+		figurasGeometricas.getTodosPerimetros();
 	}
 
 }
