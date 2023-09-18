@@ -4,6 +4,9 @@ class Retangulo {
 	private double largura;
 
 	Retangulo(double altura, double largura) {
+      if(altura ==0 || largura==0){
+         throw new FiguraException();
+      }
 		this.altura = altura;
 		this.largura = largura;
 	}
@@ -21,6 +24,9 @@ class Quadrado {
 	private double largura;
 
 	Quadrado(double largura) {
+      if(largura==0){
+         throw new FiguraException();
+      }
 		this.largura = largura;
 	}
 
@@ -37,6 +43,9 @@ class Circulo {
 	private double raio;
 
 	Circulo(double raio) {
+      if(raio ==0){
+         throw new FiguraException();
+      }
 		this.raio = raio;
 	}
 
@@ -55,8 +64,8 @@ public class FigurasGeometricas {
 	private Quadrado quadrado;
 	private Circulo circulo;
 	
-	FigurasGeometricas(double alturaQuadrado, double larguraQuadrado, double comprimentoLadoQuadrado, double raioCirculo) {
-		this.retangulo = new Retangulo(alturaQuadrado, larguraQuadrado);
+	FigurasGeometricas(double alturaRet, double larguraRet, double comprimentoLadoQuadrado, double raioCirculo) {
+		this.retangulo = new Retangulo(alturaRet, larguraRet);
 		this.quadrado = new Quadrado(comprimentoLadoQuadrado);
 		this.circulo = new Circulo(raioCirculo);
 	}
