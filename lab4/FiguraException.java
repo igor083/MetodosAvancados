@@ -1,3 +1,3 @@
-public class FiguraException extends Exception {
+public class FiguraException extends RuntimeException {
    FiguraException(){}
 }

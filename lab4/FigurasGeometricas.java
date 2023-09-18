@@ -1,14 +1,15 @@
 
-class Retangulo {
+class Retangulo  {
 	private double altura;
 	private double largura;
 
 	Retangulo(double altura, double largura) {
-      if(altura ==0 || largura==0){
+      if(altura ==0.0 || largura==0.0){
          throw new FiguraException();
       }
-		this.altura = altura;
-		this.largura = largura;
+      else{this.altura = altura;
+		this.largura = largura;}
+		
 	}
 
 	public double getArea() {
@@ -26,8 +27,7 @@ class Quadrado {
 	Quadrado(double largura) {
       if(largura==0){
          throw new FiguraException();
-      }
-		this.largura = largura;
+      }else this.largura = largura;
 	}
 
 	public double getArea() {
@@ -45,8 +45,7 @@ class Circulo {
 	Circulo(double raio) {
       if(raio ==0){
          throw new FiguraException();
-      }
-		this.raio = raio;
+      }else this.raio = raio;
 	}
 
 	public double getArea() {
