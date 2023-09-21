@@ -13,7 +13,7 @@ public class BrincandoComAsFigurasGeometricas {
             25);
 
       System.out.println(fig.getTodosPerimetros());
-     System.out.println(fig.areaDaFigura(0));
+      System.out.println(fig.areaDaFigura(0));
       System.out.println(fig.areaDaFigura(-1));
       System.out.println(fig.areaDaFigura(2));
       System.out.println(fig.areaDaFigura(1));

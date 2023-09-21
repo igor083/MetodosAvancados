@@ -1,4 +1,5 @@
 package entities;
+
 import exceptions.FiguraException;
 import interfaces.FigurasInterface;
 
