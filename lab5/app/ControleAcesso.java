@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class ControleAcesso {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FilmeException, PessoaException {
         // Criação de funcionários
         Funcionario pessoa1 = new Funcionario("Pessoa 1");
         Funcionario pessoa2 = new Funcionario("Pessoa 2");
