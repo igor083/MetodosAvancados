@@ -1,18 +1,12 @@
-public class Main {
+class Main {
     public static void main(String[] args) {
         SIG sig = new SIG();
-        
-        // Exemplo de como obter informações administrativas
-        String informacoesAdministrativas = sig.obterInformacoesAdministrativas();
-        System.out.println("Informações Administrativas:\n" + informacoesAdministrativas);
 
-        // Exemplo de como obter informações financeiras
-        String informacoesFinanceiras = sig.obterInformacoesFinanceiras();
-        System.out.println("\nInformações Financeiras:\n" + informacoesFinanceiras);
+        System.out.println(sig.obterInformacoesAdministrativas()); // OK
 
-        // Exemplo de como obter informações dos professores
-        String informacoesProfessores = sig.obterInformacoesProfessores();
-        System.out.println("\nInformações dos Professores:\n" + informacoesProfessores);
+        System.out.println(sig.obterInformacoesFinanceiras()); // OK
+
+        System.out.println(sig.obterInformacoesProfessores()); // OK
 
         // Exemplo de como obter informações dos alunos
         String informacoesAlunos = sig.obterInformacoesAlunos();

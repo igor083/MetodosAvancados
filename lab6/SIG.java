@@ -1,3 +1,7 @@
+import Administrativa.Administrativa;
+import Financeiro.Financeiro;
+import Professores.Professores;
+
 public class SIG {
     private Administrativa administrativo;
     private Financeiro financeiro;
@@ -16,15 +20,27 @@ public class SIG {
     }
 
     public String obterInformacoesAdministrativas() {
-        return administrativo.obterReunioesAgendadas() + "\n" + administrativo.obterEntrevistas();
+        String formatarSaida = "\n=-=-=-=| Informações Administrativas |=-=-=-=-=\n";
+        formatarSaida += administrativo.obterReunioesAgendadas();
+        formatarSaida += administrativo.obterEntrevistas();
+
+        return formatarSaida;
     }
 
     public String obterInformacoesFinanceiras() {
-        return financeiro.obterBalancoContas() + "\n" + financeiro.obterFolhaPagamento();
+        String formatarSaida = "=-=-=-=| Informações Financeiras |=-=-=-=-=\n";
+        formatarSaida += financeiro.obterBalancoContas();
+        formatarSaida += financeiro.obterFolhaPagamento();
+
+        return formatarSaida;
     }
 
     public String obterInformacoesProfessores() {
-        return professores.obterAlocacaoDisciplina() + "\n" + professores.obterTempoCasa();
+        String formatarSaida = "=-=-=-=| Informações dos Professores |=-=-=-=-=\n";
+        formatarSaida += professores.obterAlocacaoPorDisciplina();
+        formatarSaida += professores.obterTempoDeCasa();
+
+        return formatarSaida;
     }
 
     public String obterInformacoesAlunos() {
