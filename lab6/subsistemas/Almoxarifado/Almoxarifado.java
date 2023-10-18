@@ -37,4 +37,8 @@ public class Almoxarifado {
         }
         return builder.toString();
     }
+
+    public String obterEstoque() {
+        return null;
+    }
 }

@@ -38,14 +38,14 @@ public class TestAdministrativa {
 
     @Test
     public void testReunioesAgendadasNaoVazias() {
-        ArrayList<Reuniao> reunioes = administrativa.reunioesAgendadas;
+        String reunioes = administrativa.obterReunioesAgendadas();
         assertNotNull(reunioes);
         assertFalse(reunioes.isEmpty());
     }
 
     @Test
     public void testEntrevistasAgendadasNaoVazias() {
-        ArrayList<Entrevista> entrevistas = administrativa.entrevistasAgendadas;
+        String entrevistas = administrativa.obterEntrevistas();
         assertNotNull(entrevistas);
         assertFalse(entrevistas.isEmpty());
     }

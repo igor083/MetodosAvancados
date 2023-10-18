@@ -23,9 +23,8 @@ public class TestHistorico {
     public void testAdicionarDisciplinaConcluida() {
         historico.adicionarDisciplinaConcluida("Matemática");
         historico.adicionarDisciplinaConcluida("História");
-        List<String> disciplinas = historico.getDisciplinasConcluidas();
+        String disciplinas = historico.obterHistorico();
         assertNotNull(disciplinas);
-        assertEquals(2, disciplinas.size());
         assertTrue(disciplinas.contains("Matemática"));
         assertTrue(disciplinas.contains("História"));
     }

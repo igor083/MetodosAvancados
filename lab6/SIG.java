@@ -1,6 +1,9 @@
 import Administrativa.Administrativa;
 import Financeiro.Financeiro;
 import Professores.Professores;
+import Alunos.Alunos;
+import Almoxarifado.Almoxarifado;
+import Infraestrutura.Infraestrutura;
 
 public class SIG {
     private Administrativa administrativo;
@@ -14,7 +17,7 @@ public class SIG {
         administrativo = new Administrativa();
         financeiro = new Financeiro();
         professores = new Professores();
-        alunos = new Alunos();
+        alunos = new Alunos(null, 0);
         almoxarifado = new Almoxarifado();
         infraestrutura = new Infraestrutura();
     }

@@ -21,13 +21,18 @@ public class Alunos {
         rdm.adicionarNota(disciplina, nota);
     }
 
-    public void imprimirHistorico() {
-        System.out.println("Histórico do Aluno: " + nome);
-        historico.imprimirHistorico();
+    public String obterHistorico() {
+        String historicoAluno = "Histórico do Aluno: " + nome + "\n";
+        historicoAluno += historico.obterHistorico(); // Supondo que o método obterHistorico retorne uma String.
+    
+        return historicoAluno;
     }
-
-    public void imprimirRDM() {
-        System.out.println("Rendimento Acadêmico do Aluno: " + nome);
-        System.out.println("RDM: " + rdm.calcularRDM());
+    
+    public String obterRDM() {
+        String rdmAluno = "Rendimento Acadêmico do Aluno: " + nome + "\n";
+        rdmAluno += "RDM: " + rdm.calcularRDM() + "\n";
+    
+        return rdmAluno;
     }
+    
 }

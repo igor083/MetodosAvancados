@@ -14,10 +14,13 @@ public class Historico {
         disciplinasConcluidas.add(disciplina);
     }
 
-    public void imprimirHistorico() {
-        System.out.println("Disciplinas concluídas:");
+    public String obterHistorico() {
+        StringBuilder historicoAluno = new StringBuilder();
+        historicoAluno.append("Disciplinas concluídas:\n");
         for (String disciplina : disciplinasConcluidas) {
-            System.out.println(disciplina);
+            historicoAluno.append(disciplina).append("\n");
         }
+        return historicoAluno.toString();
     }
+    
 }
