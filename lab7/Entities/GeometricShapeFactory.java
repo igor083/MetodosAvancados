@@ -1,18 +1,22 @@
-
+package Entities;
 
 public class GeometricShapeFactory {
     private static GeometricShapeFactory instance;
     
     private GeometricShapeFactory() {
-        // Construtor privado para evitar instanciação direta
     }
     
     public static GeometricShapeFactory getInstance() {
         if (instance == null) {
-            instance = new GeometricShapeFactory();
+            synchronized (GeometricShapeFactory.class) {
+                if (instance == null) {
+                    instance = new GeometricShapeFactory();
+                }
+            }
         }
         return instance;
     }
+    
     
     public Circle createCircle() {
         return new Circle();

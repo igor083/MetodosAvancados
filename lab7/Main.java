@@ -1,3 +1,10 @@
+
+
+import Entities.Circle;
+import Entities.GeometricShapeFactory;
+import Entities.Square;
+import Entities.Triangle;
+
 public class Main {
     public static void main(String[] args) {
         GeometricShapeFactory factory = GeometricShapeFactory.getInstance();
@@ -9,6 +16,5 @@ public class Main {
         Square square1 = factory.createSquare();
         Square square2 = factory.createSquare();
         
-        // Você pode criar quantos quadrados quiser, mas apenas um círculo e três tipos de triângulos.
     }
 }
