@@ -1,14 +1,16 @@
 package Interface;
 
+import java.util.Iterator;
+
 public interface List {
-    public void clear();    
-    public void remove();
-    public void get();
-    public void add();
-    public void values();
-    public int size();
-    public int iterator();
-    public boolean contains();
-    public boolean toArray();
-    public boolean isEmpty();
+    void clear();
+    void remove(int index);
+    Object get(int index);
+    void add(Object item);
+    Object[] values();
+    int size();
+    Iterator iterator();
+    boolean contains(Object item);
+    Object[] toArray();
+    boolean isEmpty();
 }
