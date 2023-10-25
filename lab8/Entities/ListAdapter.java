@@ -1,54 +1,53 @@
 package Entities;
 
-import Interface.Map;
+import Interface.*;
 import java.util.HashMap;
-import java.util.Map.Entry;
 
 public class ListAdapter implements Map {
-    private HashMap<Object, Object> map;
+    private List list;
 
-    public ListAdapter() {
-        this.map = new HashMap<>();
+    public ListAdapter(List list) {
+        this.list = list;
     }
 
     @Override
     public void clear() {
-        map.clear();
+        list.clear();
     }
 
     @Override
     public void remove(Object key) {
-        map.remove(key);
+        list.remove();
     }
 
     @Override
     public Object get(Object key) {
-        return map.get(key);
+        return list.get(key);
     }
 
     @Override
     public void put(Object key, Object value) {
-        map.put(key, value);
+        list.put(key, value);
     }
 
     @Override
     public Object[] values() {
-        return map.values().toArray();
+        return list.values().toArray();
     }
 
     @Override
     public int size() {
-        return map.size();
+        return list.size();
     }
 
     @Override
     public boolean containsKey(Object key) {
-        return map.containsKey(key);
+        return list.containsKey(key);
     }
 
     @Override
     public boolean containsValue(Object value) {
-        return map.containsValue(value);
+        return list.containsValue(value);
     }
 
     @Override
@@ -60,11 +59,11 @@ public class ListAdapter implements Map {
             return false;
         }
         ListAdapter other = (ListAdapter) obj;
-        return map.equals(other.map);
+        return list.equals(other.list);
     }
 
     @Override
     public boolean isEmpty() {
-        return map.isEmpty();
+        return list.isEmpty();
     }
 }
