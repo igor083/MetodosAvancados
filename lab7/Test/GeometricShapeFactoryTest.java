@@ -2,55 +2,49 @@ package Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertThrows;
 
 import org.junit.Before;
 import org.junit.Test;
 import Entities.GeometricShapeFactory;
-import Entities.Circle;
-import Entities.Square;
-import Entities.Triangle;
 
 public class GeometricShapeFactoryTest {
     private GeometricShapeFactory factory;
 
-    @Before
-    public void setUp() {
-        factory = GeometricShapeFactory.getInstance();
-    }
+   
 
     @Test
-    public void testGetInstance() {
-        GeometricShapeFactory anotherFactory = GeometricShapeFactory.getInstance();
-        assertSame("As instâncias devem ser as mesmas", factory, anotherFactory);
+    public void testCreateCircle() throws RuntimeException {
+        GeometricShapeFactory anotherFactory = new GeometricShapeFactory();
+        anotherFactory.createCircle();
+        assertThrows(RuntimeException.class, () -> anotherFactory.createCircle());
     }
 
-    @Test
-    public void testCreateCircle() {
-        Circle circle = factory.createCircle();
-        assertEquals("Círculo criado", circle.toString());
-    }
+   
 
     @Test
-    public void testCreateIsoscelesTriangle() {
-        Triangle triangle = factory.createIsoscelesTriangle();
-        assertEquals("Isosceles triângulo criado", triangle.toString());
+    public void testCreateRectangleTriangle() throws RuntimeException {
+        GeometricShapeFactory anotherFactory = new GeometricShapeFactory();
+        anotherFactory.createRectangleTriangle();
+        assertThrows(RuntimeException.class, () -> anotherFactory.createRectangleTriangle());
     }
 
-    @Test
-    public void testCreateEquilateralTriangle() {
-        Triangle triangle = factory.createEquilateralTriangle();
-        assertEquals("Equilateral triângulo criado", triangle.toString());
+
+   @Test
+    public void createIsoscelesTriangle() throws RuntimeException {
+        GeometricShapeFactory anotherFactory = new GeometricShapeFactory();
+        anotherFactory.createIsoscelesTriangle();
+        assertThrows(RuntimeException.class, () -> anotherFactory.createIsoscelesTriangle());
     }
 
-    @Test
-    public void testCreateRectangle() {
-        Triangle triangle = factory.createRectangle();
-        assertEquals("Rectangle triângulo criado", triangle.toString());
-    }
 
     @Test
-    public void testCreateSquare() {
-        Square square = factory.createSquare();
-        assertEquals("Quadrado criado", square.toString());
+    public void createEquilateralTriangle() throws RuntimeException {
+        GeometricShapeFactory anotherFactory = new GeometricShapeFactory();
+        anotherFactory.createEquilateralTriangle();
+         assertThrows(RuntimeException.class, () -> anotherFactory.createEquilateralTriangle());
     }
+
+
+   
 }

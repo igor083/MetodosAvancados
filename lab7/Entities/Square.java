@@ -1,7 +1,7 @@
 package Entities;
 
 
-public class Square {
+class Square {
     public Square() {
     }
 

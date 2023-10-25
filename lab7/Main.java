@@ -1,20 +1,16 @@
-
-
-import Entities.Circle;
 import Entities.GeometricShapeFactory;
-import Entities.Square;
-import Entities.Triangle;
 
 public class Main {
     public static void main(String[] args) {
-        GeometricShapeFactory factory = GeometricShapeFactory.getInstance();
-        
-        Circle circle = factory.createCircle();
-        Triangle isoscelesTriangle = factory.createIsoscelesTriangle();
-        Triangle equilateralTriangle = factory.createEquilateralTriangle();
-        Triangle rectangle = factory.createRectangle();
-        Square square1 = factory.createSquare();
-        Square square2 = factory.createSquare();
-        
+        GeometricShapeFactory factory = new GeometricShapeFactory();
+
+
+        System.out.println(factory.createCircle());
+        System.out.println(factory.createSquare());
+        System.out.println(factory.createSquare());
+
+        System.out.println(factory.createEquilateralTriangle());
+        System.out.println(factory.createIsoscelesTriangle());
+        System.out.println(factory.createRectangleTriangle());
     }
 }

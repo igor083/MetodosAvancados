@@ -1,22 +1,7 @@
 package Entities;
 
-public class GeometricShapeFactory {
-    private static GeometricShapeFactory instance;
-    
-    private GeometricShapeFactory() {
-    }
-    
-    public static GeometricShapeFactory getInstance() {
-        if (instance == null) {
-            synchronized (GeometricShapeFactory.class) {
-                if (instance == null) {
-                    instance = new GeometricShapeFactory();
-                }
-            }
-        }
-        return instance;
-    }
-    
+public class GeometricShapeFactory {    
+    public GeometricShapeFactory() {}
     
     public Circle createCircle() {
         return new Circle();
@@ -27,11 +12,11 @@ public class GeometricShapeFactory {
     }
     
     public Triangle createEquilateralTriangle() {
-        return new Triangle("Equilateral");
+        return new Triangle("Equilatero");
     }
     
-    public Triangle createRectangle() {
-        return new Triangle("Rectangle");
+    public Triangle createRectangleTriangle() {
+        return new Triangle("Retangulo");
     }
     
     public Square createSquare() {
