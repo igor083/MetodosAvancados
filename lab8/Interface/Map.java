@@ -2,9 +2,10 @@ package Interface;
 
 public interface Map {
     void clear();
-    void remove(Object key);
-    Object get(Object key);
-    void put(Object key, Object value);
+    //o metodo remove recebe uma chave do tipo object.
+    int remove(Object key);
+    int get(Object key);
+    int put(Object key, Object value);
     Object[] values();
     int size();
     boolean containsKey(Object key);

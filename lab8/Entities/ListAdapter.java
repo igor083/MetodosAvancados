@@ -1,53 +1,61 @@
 package Entities;
 
-import Interface.*;
+import Interface.Map;
 import java.util.HashMap;
 
 public class ListAdapter implements Map {
-    private List list;
+    private HashMap<Object, Object> map; // Usamos um mapa para armazenar os pares chave-valor.
 
-    public ListAdapter(List list) {
-        this.list = list;
+    public ListAdapter() {
+        this.map = new HashMap<>(); // Inicializamos o mapa.
     }
 
     @Override
     public void clear() {
-        list.clear();
+        map.clear();
     }
 
     @Override
-    public void remove(Object key) {
-        list.remove();
+    public int remove(Object key) {
+        if (map.containsKey(key)) {
+            map.remove(key);
+            return 1;
+        }
+        return 0;
     }
 
     @Override
-    public Object get(Object key) {
-        return list.get(key);
+    public int get(Object key) {
+        if (map.containsKey(key)) {
+            return 1;
+        }
+        return 0;
     }
 
     @Override
-    public void put(Object key, Object value) {
-        list.put(key, value);
+    public int put(Object key, Object value) {
+        map.put(key, value);
+        return 1;
     }
 
     @Override
     public Object[] values() {
-        return list.values().toArray();
+        return map.values().toArray();
     }
 
     @Override
     public int size() {
-        return list.size();
+        return map.size();
     }
 
     @Override
     public boolean containsKey(Object key) {
-        return list.containsKey(key);
+        return map.containsKey(key);
     }
 
     @Override
     public boolean containsValue(Object value) {
-        return list.containsValue(value);
+        return map.containsValue(value);
     }
 
     @Override
@@ -59,11 +67,13 @@ public class ListAdapter implements Map {
             return false;
         }
         ListAdapter other = (ListAdapter) obj;
-        return list.equals(other.list);
+        return map.equals(other.map);
     }
 
     @Override
     public boolean isEmpty() {
-        return list.isEmpty();
+        return map.isEmpty();
     }
 }
+
+
