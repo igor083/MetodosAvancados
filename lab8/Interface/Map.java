@@ -2,13 +2,13 @@ package Interface;
 
 public interface Map {
     void clear();
-    boolean containsKey(Object key);
-    boolean containsValue(Object value);
-    boolean equals(Object obj);
-    int get(Object key);
+    boolean containsKey(Integer key);
+    boolean containsValue(Integer value);
+    boolean equals(Integer obj);
+    Integer get(Integer key);
     boolean isEmpty();
-    int put(Object key, Object value);
-    int remove(Object key);
-    int size();
-    Object[] values();
+    boolean put(Integer value);
+    boolean remove(Integer key);
+    Integer size();
+    Integer[] values();
 }
