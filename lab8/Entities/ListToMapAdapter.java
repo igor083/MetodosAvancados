@@ -58,12 +58,13 @@ public class ListToMapAdapter implements Map {
 
     @Override
     public Integer[] values() {
-        int[] array = new int[this.list.size()];
-
+        Integer[] array = new Integer[this.list.size()];
+        
         for (int i = 0; i < this.list.size(); i++) {
             array[i] = this.list.get(i);
         }
-        return ;
+        
+        return array;
     }
 }
 
