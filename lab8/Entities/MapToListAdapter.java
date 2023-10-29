@@ -26,14 +26,24 @@ public class MapToListAdapter implements List {
     }
 
     @Override
-    public boolean equals(Object item) {
-        return this.map.equals(item);
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
     }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    MapToListAdapter other = (MapToListAdapter) obj;
+    return this.map.equals(other.map);
+}
 
-    @Override
-    public Integer get(Integer item) {
-        return this.map.get(item);
-    }
+
+@Override
+public Integer get(Integer item) {
+    Integer value = this.map.get(item);
+    return value != null ? value : null;
+}
+
 
     @Override
     public boolean isEmpty() {

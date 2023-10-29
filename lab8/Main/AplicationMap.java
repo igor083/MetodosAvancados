@@ -35,7 +35,7 @@ public class AplicationMap {
         listToMapAdapter.remove(1);
         System.out.println("Tamanho Depois de remover: " + listToMapAdapter.size());
 
-        // ----> ISEMPTY
+        // ----> IS EMPTY
         boolean estaVazia = listToMapAdapter.isEmpty();
         System.out.println("Está vazia: " + estaVazia);
 

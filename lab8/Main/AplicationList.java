@@ -34,7 +34,7 @@ public class AplicationList {
         mapToListAdapter.remove(1);
         System.out.println("Tamanho Depois de remover: " + mapToListAdapter.size());
 
-        // ----> ISEMPTY
+        // ----> IS EMPTY
         boolean estaVazia = mapToListAdapter.isEmpty();
         System.out.println("Está vazia: " + estaVazia);
 
@@ -43,11 +43,7 @@ public class AplicationList {
         for (Integer i : mapToListAdapter.toArray()) {
             System.out.println("-> "+i);
         }
-        
-        // ----> ITERATOR?
-        //
-        //
-
+       
         // ----> CLEAR
         mapToListAdapter.clear();
         System.out.println("Tamanho após limpeza: " + mapToListAdapter.size());
