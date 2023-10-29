@@ -12,5 +12,5 @@ public interface List {
     boolean contains(Integer item);
     Object[] toArray();
     boolean isEmpty();
-    boolean equals(Integer item);
+    boolean equals(Object item);
 }

@@ -4,7 +4,7 @@ public interface Map {
     void clear();
     boolean containsKey(Integer key);
     boolean containsValue(Integer value);
-    boolean equals(Integer obj);
+    boolean equals(Object obj);
     Integer get(Integer key);
     boolean isEmpty();
     boolean put(Integer value);

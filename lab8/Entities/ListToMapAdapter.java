@@ -4,7 +4,6 @@ import Interface.Map;
 import java.util.List;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class ListToMapAdapter implements Map {
     private List<Integer> list = new ArrayList<Integer>();
@@ -27,7 +26,7 @@ public class ListToMapAdapter implements Map {
     }
 
     @Override
-    public boolean equals(Integer obj) {
+    public boolean equals(Object obj) {
         return this.list.equals(obj);
     }
 

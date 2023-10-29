@@ -26,7 +26,7 @@ public class MapToListAdapter implements List {
     }
 
     @Override
-    public boolean equals(Integer item) {
+    public boolean equals(Object item) {
         return this.map.equals(item);
     }
 
