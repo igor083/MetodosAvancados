@@ -12,11 +12,11 @@ public class visitorCalcularPerimetro implements VisitorIF  {
 
     @Override
     public double visitaRetangulo(Rectangle rectangle) {
-        return 2*(rectangle.getAltura() + rectangle.getAltura()); // 2(b+h)
+        return 2*rectangle.getAltura() + 2*rectangle.getLargura(); // 2(b+h)
     }
 
     @Override
     public double visitaTriangulo(Triangle triangle) {
-        return triangle.getAltura() + triangle.getBase();
+        return triangle.getAltura() + triangle.getBase()+triangle.getLado();
     }
 }
