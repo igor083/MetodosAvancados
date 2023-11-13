@@ -7,7 +7,7 @@ public class AplicationList {
         MapToListAdapter mapToListAdapter = new MapToListAdapter();
 
         // ----> ADD
-        mapToListAdapter.add(1);
+        mapToListAdapter.add(2);
         mapToListAdapter.add(100);
         mapToListAdapter.add(80);
         mapToListAdapter.add(44);
