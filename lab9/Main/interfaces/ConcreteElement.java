@@ -1,5 +1,5 @@
 package interfaces;
 
 public interface ConcreteElement {
-    void acceptVisit(VisitorIF visitorIF);
+    void acceptVisit(Visitor visitor);
 }

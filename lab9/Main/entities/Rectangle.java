@@ -1,13 +1,8 @@
 package entities;
 
-import interfaces.ConcreteElementIF;
-import interfaces.VisitorIF;
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
-public class Rectangle implements ConcreteElementIF {
+import interfaces.ConcreteElement;
+import interfaces.Visitor;
+public class Rectangle implements ConcreteElement {
 
     private Double height;
     private Double width;
@@ -21,8 +16,8 @@ public class Rectangle implements ConcreteElementIF {
     }
 
     @Override
-    public void acceptVisit(VisitorIF visitorIF) {
-        Double result = visitorIF.visitRectangle(this);
+    public void acceptVisit(Visitor visitor) {
+        Double result = visitor.visitRectangle(this);
 
         if (result != 0.0) {
             System.out.println(result);

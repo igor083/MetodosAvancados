@@ -1,13 +1,9 @@
 package entities;
 
-import interfaces.ConcreteElementIF;
-import interfaces.VisitorIF;
-import lombok.Getter;
-import lombok.Setter;
+import interfaces.ConcreteElement;
+import interfaces.Visitor;
 
-@Getter
-@Setter
-public class Trapezium implements ConcreteElementIF {
+public class Trapezium implements ConcreteElement {
 
     private Double smallestBase;
     private Double biggestBase;
@@ -27,8 +23,8 @@ public class Trapezium implements ConcreteElementIF {
     }
 
     @Override
-    public void acceptVisit(VisitorIF visitorIF) {
-        Double result = visitorIF.visitTrapezium(this);
+    public void acceptVisit(Visitor visitor) {
+        Double result = visitor.visitTrapezium(this);
 
         if (result != 0) {
             System.out.println(result);

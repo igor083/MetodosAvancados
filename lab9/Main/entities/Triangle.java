@@ -1,13 +1,9 @@
 package entities;
 
-import interfaces.ConcreteElementIF;
-import interfaces.VisitorIF;
-import lombok.Getter;
-import lombok.Setter;
+import interfaces.ConcreteElement;
+import interfaces.Visitor;
 
-@Getter
-@Setter
-public class Triangle implements ConcreteElementIF {
+public class Triangle implements ConcreteElement{
 
     private Double side1;
     private Double side2;
@@ -27,8 +23,8 @@ public class Triangle implements ConcreteElementIF {
     }
 
     @Override
-    public void acceptVisit(VisitorIF visitorIF) {
-        Double result = visitorIF.visitTriangle(this);
+    public void acceptVisit(Visitor visitor) {
+        Double result = visitor.visitTriangle(this);
 
         if (result != 0) {
             System.out.println(result);

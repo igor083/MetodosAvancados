@@ -1,13 +1,9 @@
 package entities;
 
-import interfaces.ConcreteElementIF;
-import interfaces.VisitorIF;
-import lombok.Getter;
-import lombok.Setter;
+import interfaces.ConcreteElement;
+import interfaces.Visitor;
 
-@Getter
-@Setter
-public class Circle implements ConcreteElementIF {
+public class Circle implements ConcreteElement {
 
     private Double radius;
 
@@ -19,8 +15,8 @@ public class Circle implements ConcreteElementIF {
     }
 
     @Override
-    public void acceptVisit(VisitorIF visitorIF) {
-        Double result = visitorIF.visitCircle(this);
+    public void acceptVisit(Visitor visitor) {
+        Double result = visitor.visitCircle(this);
 
         if (result != 0.0) {
             System.out.println(result);

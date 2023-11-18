@@ -2,11 +2,7 @@ package entities;
 
 import ij.IJ;
 import ij.ImagePlus;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class DisplayImage {
     private ImagePlus imagePlus;
 
