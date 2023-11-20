@@ -18,25 +18,19 @@ public class Terminal {
 		this.bus = new Onibus();
 	}
 	
-	/**
-	 * Adiciona um Listener a lista de Listeners desse souce
-	 * @param t Listerner
-	 */
+	
+	
 	public void addTerminalListener(TerminalListener t) {
 		this.listeners.add(t);
 	}
 	
-	/**
-	 * Remove um Listener a lista de Listeners desse souce
-	 * @param t Listerner
-	 */
 	public void removeTerminalListener(TerminalListener t) {
 		this.listeners.remove(t);
 	}
 
-	/**
-	 * Método para notificar Listeners de alteração
-	 */
+	
+	 // Método para notificar Listeners de alteração
+	
 	private void onibusAlterou() {
 		TerminalEvent e = new TerminalEvent(this);
 		
@@ -45,33 +39,24 @@ public class Terminal {
 		}
 	}
 
-	/**
-	 * Vende uma passagem
-	 * @return O número do acento
-	 * @throws OnibusException Caso o ônibus esteja cheio
-	 */
+	//vende passagem
+
 	public int venderPassagem() throws OnibusException {
 		int a = this.bus.adicionar();
 		onibusAlterou();
 		return a;
 	}
 	
-	/**
-	 * Reserva uma passagem
-	 * @return O número do acento
-	 * @throws OnibusException Caso o ônibus esteja cheio
-	 */
+	//Reserva uma passagem
+	 
 	public int reservarPassagem() throws OnibusException {
 		int a = this.bus.reservar();
 		onibusAlterou();
 		return a;
 	}
 	
-	/**
-	 * Cancela uma passagem comprada/reservada
-	 * @param i Número do acento
-	 * @return
-	 */
+	// Cancela uma passagem comprada/reservada
+	
 	public boolean cancelarPassagem(int i) {
 		if (i >= 0 && i <= this.bus.getCapacidade()) {
 			this.bus.liberar(i);
@@ -81,10 +66,8 @@ public class Terminal {
 		return false;
 	}
 	
-	/**
-	 * Recupera o ônibus
-	 * @return
-	 */
+//Recupera o ônibus
+
 	public Onibus getOnibus() {
 		return this.bus;
 	}
