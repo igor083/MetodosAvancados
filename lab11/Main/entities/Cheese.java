@@ -12,4 +12,8 @@ public class Cheese {
     public Cheese(CheeseTypeEnum cheeseTypeEnum) {
         this.cheeseTypeEnum = cheeseTypeEnum;
     }
+
+    public String getCheeseTypeEnum() {
+        return cheeseTypeEnum.name();
+    }
 }

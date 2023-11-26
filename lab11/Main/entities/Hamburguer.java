@@ -10,6 +10,15 @@ abstract public class Hamburguer {
     private Ham ham;
     private Tomato tomato;
 
+    public Hamburguer() {
+        // Inicialize as instâncias aqui ou em algum outro método, conforme necessário
+        this.bread = breadFactory();
+        this.cheese = cheeseFactory();
+        this.egg = eggFactory();
+        this.ham = hamFactory();
+        this.tomato = tomatoFactory();
+    }
+
     public Bread breadFactory() {
         return new Bread(BreadTypeEnum.Padrao);
 //        bread.setBreadTypeEnum(BreadTypeEnum.Bola);

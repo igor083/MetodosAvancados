@@ -14,4 +14,8 @@ public class Ham {
     public Ham(HamTypeEnum hamTypeEnum) {
         this.hamTypeEnum = hamTypeEnum;
     }
+
+    public String getHamTypeEnum() {
+        return hamTypeEnum.name();
+    }
 }

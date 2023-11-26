@@ -13,4 +13,8 @@ public class Tomato {
     public Tomato(TomatoTypeEnum tomatoTypeEnum) {
         this.tomatoTypeEnum = tomatoTypeEnum;
     }
+
+    public String getTomatoTypeEnum() {
+        return tomatoTypeEnum.name();
+    }
 }

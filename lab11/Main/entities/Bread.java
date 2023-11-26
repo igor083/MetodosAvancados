@@ -11,4 +11,8 @@ public class Bread {
     public Bread(BreadTypeEnum breadTypeEnum) {
         this.breadTypeEnum = breadTypeEnum;
     }
+
+    public String getBreadTypeEnum() {
+        return breadTypeEnum.name();
+    }
 }

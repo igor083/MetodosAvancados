@@ -37,4 +37,19 @@ public class HamburgerBauru extends Hamburguer {
 //        setTomato(new Tomato(TomatoTypeEnum.TomateVermelho));
         return new Tomato(TomatoTypeEnum.TomateVermelho);
     }
+
+    public void setBread(Bread breadFactory) {
+    }
+
+    public void setCheese(Cheese cheeseFactory) {
+    }
+
+    public void setHam(Ham hamFactory) {
+    }
+
+    public void setEgg(Egg eggFactory) {
+    }
+
+    public void setTomato(Tomato tomatoFactory) {
+    }
 }
